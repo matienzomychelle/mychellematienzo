@@ -76,8 +76,24 @@
   }
   
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-family: var(--font-sans);
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 20%, hsl(24 38% 64% / 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 30%, hsl(25 38% 76% / 0.2), transparent),
+      radial-gradient(ellipse 50% 60% at 50% 80%, hsl(60 11% 60% / 0.12), transparent),
+      radial-gradient(ellipse 70% 50% at 10% 70%, hsl(22 47% 88% / 0.18), transparent),
+      radial-gradient(ellipse 40% 40% at 90% 80%, hsl(60 12% 68% / 0.15), transparent),
+      hsl(var(--background));
+    background-attachment: fixed;
+  }
+  
+  .dark body {
+    background: 
+      radial-gradient(ellipse 80% 50% at 20% 20%, hsl(24 38% 64% / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 30%, hsl(25 38% 76% / 0.1), transparent),
+      radial-gradient(ellipse 50% 60% at 50% 80%, hsl(60 11% 60% / 0.06), transparent),
+      hsl(var(--background));
   }
   
   h1, h2, h3, h4, h5, h6 {
