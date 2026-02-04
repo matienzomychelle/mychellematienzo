@@ -1,4 +1,5 @@
 import { ArrowDown } from 'lucide-react';
+import formalPhoto from '@/assets/formal-photo.jpg';
 
 const HeroSection = () => {
   return (
@@ -8,14 +9,14 @@ const HeroSection = () => {
           {/* Text Content */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <p className="text-sm md:text-base font-medium text-primary tracking-wider uppercase mb-4 opacity-0 animate-fade-in-up">
-              IT Student • OJT Portfolio
+              IT Intern • OJT Portfolio
             </p>
             <h1 className="heading-xl mb-6 opacity-0 animate-fade-in-up animation-delay-200">
               Hello, I'm <br />
-              <span className="text-primary">Your Name</span>
+              <span className="text-primary">Mychelle Jane Matienzo</span>
             </h1>
             <p className="body-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-in-up animation-delay-400">
-              A dedicated 4th Year BS Information Technology student, passionate about creating meaningful digital solutions through hands-on experience.
+              Enthusiastic and quick-learning Information Technology student with knowledge in networking, website development, programming, and multimedia editing. Eager to contribute to team success and develop technical skills in real-world scenarios.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-in-up animation-delay-600">
               <a
@@ -33,13 +34,15 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Photo Placeholder */}
+          {/* Photo */}
           <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-fade-in animation-delay-400">
             <div className="relative">
               <div className="w-64 h-80 md:w-72 md:h-96 lg:w-80 lg:h-[28rem] bg-secondary rounded-2xl overflow-hidden shadow-xl">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary to-muted">
-                  <span className="text-muted-foreground font-serif text-lg">Your Photo</span>
-                </div>
+                <img 
+                  src={formalPhoto} 
+                  alt="Mychelle Jane Matienzo" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -z-10 top-4 left-4 w-full h-full border-2 border-primary/30 rounded-2xl" />
