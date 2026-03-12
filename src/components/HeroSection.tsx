@@ -1,24 +1,48 @@
+import { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import formalPhoto from '@/assets/formal-photo.jpg';
+import bgAuraVideo from '@/assets/bg aura.mp4';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const textRef = useScrollReveal();
+  const photoRef = useScrollReveal();
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative">
-      <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src={bgAuraVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="section-container relative z-20" style={{ transform: `translateY(${scrollY * -0.2}px)` }}>
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           {/* Text Content */}
-          <div className="order-2 lg:order-1 text-center lg:text-left">
-            <p className="text-sm md:text-base font-medium text-primary tracking-wider uppercase mb-4 opacity-0 animate-fade-in-up">
+          <div ref={textRef} className="order-1 lg:order-1 text-center lg:text-left flex-1 translate-y-10 scale-95 transition-all duration-700">
+            <p className="text-sm md:text-base font-medium text-primary tracking-wider uppercase mb-4">
               IT Intern • OJT Portfolio
             </p>
-            <h1 className="heading-xl mb-6 opacity-0 animate-fade-in-up animation-delay-200">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight mb-6">
               Hello, I'm <br />
               <span className="text-primary">Mychelle Jane Matienzo</span>
             </h1>
-            <p className="body-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-in-up animation-delay-400">
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
               Enthusiastic and quick-learning Information Technology student with knowledge in networking, website development, programming, and multimedia editing. Eager to contribute to team success and develop technical skills in real-world scenarios.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-in-up animation-delay-600">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#about"
                 className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors duration-200"
@@ -35,12 +59,12 @@ const HeroSection = () => {
           </div>
 
           {/* Photo */}
-          <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-fade-in animation-delay-400">
-            <div className="relative">
-              <div className="w-64 h-80 md:w-72 md:h-96 lg:w-80 lg:h-[28rem] bg-secondary rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src={formalPhoto} 
-                  alt="Mychelle Jane Matienzo" 
+          <div ref={photoRef} className="order-1 lg:order-2 flex justify-center translate-y-10 scale-95 transition-all duration-700">
+            <div className="relative hover:scale-105 transition-transform duration-300">
+              <div className="w-80 h-96 md:w-96 md:h-[30rem] lg:w-[28rem] lg:h-[36rem] bg-secondary rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={formalPhoto}
+                  alt="Mychelle Jane Matienzo"
                   className="w-full h-full object-cover object-top"
                 />
               </div>

@@ -35,7 +35,7 @@ const ContactSection = () => {
             <h3 className="font-serif text-2xl font-medium mb-6">Contact Information</h3>
             <div className="space-y-6">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:matienzomychellejane@gmail.com"
                 className="flex items-start gap-4 group"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors duration-200">
@@ -44,13 +44,13 @@ const ContactSection = () => {
                 <div>
                   <p className="font-medium mb-1">Email</p>
                   <p className="text-muted-foreground group-hover:text-primary transition-colors duration-200">
-                    your.email@example.com
+                    matienzomychellejane@gmail.com
                   </p>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://linkedin.com/in/mychellematienzo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 group"
@@ -61,7 +61,7 @@ const ContactSection = () => {
                 <div>
                   <p className="font-medium mb-1">LinkedIn</p>
                   <p className="text-muted-foreground group-hover:text-primary transition-colors duration-200">
-                    linkedin.com/in/yourprofile
+                    linkedin.com/in/mychellematienzo
                   </p>
                 </div>
               </a>
@@ -73,7 +73,7 @@ const ContactSection = () => {
                 <div>
                   <p className="font-medium mb-1">Location</p>
                   <p className="text-muted-foreground">
-                    City, Province, Philippines
+                    273 S De Guzman St, Brgy. Parada, Valenzuela City, 1441 Metro Manila, Philippines
                   </p>
                 </div>
               </div>
